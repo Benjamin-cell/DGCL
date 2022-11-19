@@ -13,18 +13,19 @@ knowledge of DDI and guide the model to differentiate interactions in medication
 - Python >=3.5
 
 ##How to run the code
-## First, data preprocessing
+## Data preprocessing
 Our process of preparing data just follows SafeDrug with slight modifications. Put the files of MIMIC III and II into the 'data' dir as below:
-In ./data, you can find the well-preprocessed data in pickle form. Also, it's easy to re-generate the data as follows:
+In ./data, you can find the well-preprocessed data in pickle form. You only need to change the data address in the train_dgcl file to read the data from lines 174 to 177.
+Also, it's easy to re-generate the data as follows:
 1.  download [MIMIC data](https://mimic.physionet.org/gettingstarted/dbsetup/) and put DIAGNOSES_ICD.csv, PRESCRIPTIONS.csv, PROCEDURES_ICD.csv in ./data/
 2.  download [DDI data](：https://pan.baidu.com/s/1Ey-XBZfxwrvIuD7mvNz2VQ  Extraction code ：1234) and put it in ./data/
-3.  run code **./data/preprocess.ipynb**
+3.  run code **./data/preprocess.ipynb**(Just follows SafeDrug with slight modifications )
 
  
  
  ###
  ```
- python train_DGCL.py --model_name DGCL --ddi# training with DDI knowledge
+ python train_dgcl.py --model_name DGCL --ddi# training with DDI knowledge
 
  ```
  
